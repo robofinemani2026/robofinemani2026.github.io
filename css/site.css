@@ -122,7 +122,7 @@
     margin: 52px 0 24px;
 }
 /* wider column so the 4 speakers sit on a single row */
-.wrap.people-wrap { max-width: 1280px; }
+.wrap.people-wrap { max-width: 1140px; }
 /* wider still so all 5 organizers sit on a single row */
 .wrap.people-wrap-5 { max-width: 1280px; }
 .person {
@@ -133,15 +133,15 @@
     min-width: 168px;      /* photo width; box hugs its widest child */
 }
 /* speakers: fixed equal-width columns → perfectly even spacing */
-.people-wrap .person { width: 270px; min-width: 270px; }
-.people-wrap .people-grid { gap: 48px 40px; }
+.people-wrap .person { width: 250px; min-width: 250px; }
+.people-wrap .people-grid { gap: 48px 20px; }
 .person img {
     width: 168px;
     height: 168px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 12px;
-    background: #e9eef9;
+    background: #fff;
     border: 3px solid #fff;
     box-shadow: 0 3px 12px rgba(0,0,0,0.12);
 }
