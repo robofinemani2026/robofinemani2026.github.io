@@ -1,0 +1,129 @@
+<!-- FlatFy Theme - Andrea Galanti /-->
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CoRL 2026 Workshop — Beyond Binary Success: Diagnosing Fine-Grained Capabilities in Robot Manipulation">
+    <meta name="author" content="">
+    <title>RoboFineMani @ CoRL 2026</title>
+    <link rel="icon" href="photo/arm.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Google Web Font -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+    <!-- Custom CSS-->
+    <link href="css/general.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link href="css/site.css" rel="stylesheet">
+
+    <script src="js/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body id="home">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+
+    <!-- FullScreen Hero -->
+    <div class="intro-header">
+        <div class="col-xs-12 text-center abcen1">
+            <h1 class="h1_home wow fadeIn" data-wow-delay="0.4s" style="text-shadow: 0px 8px 4px black, 0 0 25px black;font-weight: 400; max-width: 86%; margin: 0 auto; margin-top: 12vh;">
+                <span style="font-size: 0.4em; display: block; margin-bottom: 10px;">CoRL 2026 Workshop</span>
+                <span style="font-size: 0.7em;">Beyond Binary Success: Diagnosing Fine-Grained Capabilities in Robot Manipulation</span>
+            </h1>
+            <br>
+            <h3 class="h3_home wow fadeIn" data-wow-delay="0.6s" style="text-shadow: 0px 8px 4px black, 0 0 25px black;font-weight: 600">
+                <a style="color:white;text-shadow: 0px 8px 4px black, 0 0 25px black" href="#about">
+                    Time:&nbsp;<b>TBD</b><br>
+                    Room:&nbsp;<b>TBD</b>
+                </a>
+            </h3>
+        </div>
+        <div class="col-xs-12 text-center abcen wow fadeIn">
+            <div class="button_down">
+                <a class="imgcircle wow bounceInUp" data-wow-duration="1.5s" href="#about"> <img class="img_scroll" src="img/icon/circle.png" alt=""> </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NavBar-->
+    <nav class="navbar-default" role="navigation">
+        <div class="container" style="width: 1600px;">
+            <div class="navbar-header" style="display: flex; align-items: center;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="font-size:20px; display: flex; align-items: center; margin-right: 25px;" href="index.html">
+                    <img src="photo/arm.png" style="height: 38px; margin-right: 10px;" alt="RoboFineMani Logo">
+                    RoboFineMani@CoRL 2026
+                </a>
+                <div class="collapse navbar-collapse navbar-ex1-collapse" style="display: flex !important;">
+                    <ul class="nav navbar-nav" style="display: flex; flex-direction: row;">
+                        <li class="menuItem active" style="padding: 0 10px;"><a href="index.html">About</a></li>
+                        <li class="menuItem" style="padding: 0 10px;"><a href="competition.html">Open Competition</a></li>
+                        <li class="menuItem" style="padding: 0 10px;"><a href="cfp.html">Call for Papers</a></li>
+                        <li class="menuItem" style="padding: 0 10px;"><a href="speakers.html">Invited Speakers</a></li>
+                        <li class="menuItem" style="padding: 0 10px;"><a href="program.html">Program</a></li>
+                        <li class="menuItem" style="padding: 0 10px;"><a href="organizers.html">Organizers</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About -->
+    <div id="about" class="page-section">
+        <div class="wrap wow fadeInUp">
+            <h3 class="section-heading">About the Workshop</h3>
+            <p class="lead-intro">Fine-grained robot manipulation demands more than completing a task once. Reliable physical intelligence requires accurate instruction understanding, precise local perception, and stable, constraint-aware action execution. However, most existing benchmarks still summarize performance using binary success rates, making it difficult to determine why a system succeeds, where it fails, and which capability should be improved.</p>
+
+            <p>Our workshop brings together researchers in robot learning, manipulation, embodied AI, computer vision, and vision-language-action modeling to rethink how fine-grained robotic capabilities should be evaluated. The workshop is built around <a href="https://metafine.github.io/" target="_blank"><b>MetaFine</b></a>, a diagnostic meta-evaluation framework that decomposes manipulation competence into three dimensions&mdash;understanding, perception, and controlled behavior&mdash;and reveals capability-specific limitations hidden by aggregate metrics.</p>
+
+            <p>A central component of the workshop is the <a href="competition.html"><b>MetaFine Open Competition</b></a>. Participating teams will evaluate and improve their systems under a unified diagnostic protocol, with the top teams invited to present their approaches and analyze representative successes and failures during the workshop. Competition results will serve as shared evidence for expert discussions, collaborative failure analysis, breakout problem-solving, and community debate.</p>
+
+            <p>Rather than functioning as a sequence of talks, the workshop will actively engage speakers, competition participants, paper authors, and attendees in addressing concrete open questions: How should manipulation failures be attributed? How can robustness and causal bottlenecks be evaluated? How should simulation and real-world evidence be combined? And how can multidimensional capabilities be reported without collapsing them into another misleading single score?</p>
+
+            <p>Our goal is to move robot-learning evaluation from ranking to diagnosis, and to establish actionable principles for measuring and improving genuine physical dexterity.</p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-title">RoboFineMani @ CoRL 2026</div>
+        <div class="footer-sub">Beyond Binary Success: Diagnosing Fine-Grained Capabilities in Robot Manipulation</div>
+        <div class="footer-meta">CoRL 2026 Workshop &middot; November 9, 2026 &middot; &copy; 2026</div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/stickUp.min.js"></script>
+    <script type="text/javascript">
+        jQuery(function($) {
+            $(document).ready(function() {
+                $('.navbar-default').stickUp();
+            });
+        });
+    </script>
+    <script src="js/wow.min.js"></script>
+    <script>new WOW().init();</script>
+</body>
+</html>

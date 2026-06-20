@@ -1,0 +1,112 @@
+<!-- FlatFy Theme - Andrea Galanti /-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MetaFine Open Competition — RoboFineMani @ CoRL 2026">
+    <title>Open Competition — RoboFineMani @ CoRL 2026</title>
+    <link rel="icon" href="photo/arm.png">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/general.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
+    <script src="js/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body id="home">
+
+    <!-- NavBar-->
+    <nav class="navbar-default" role="navigation">
+        <div class="container" style="width: 1600px;">
+            <div class="navbar-header" style="display: flex; align-items: center;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="font-size:20px; display: flex; align-items: center; margin-right: 25px;" href="index.html">
+                    <img src="photo/arm.png" style="height: 38px; margin-right: 10px;" alt="RoboFineMani Logo">
+                    RoboFineMani@CoRL 2026
+                </a>
+                <div class="collapse navbar-collapse navbar-ex1-collapse" style="display: flex !important;">
+                    <ul class="nav navbar-nav" style="display: flex; flex-direction: row;">
+                        <li class="menuItem" style="padding: 0 10px;"><a href="index.html">About</a></li>
+                        <li class="menuItem active" style="padding: 0 10px;"><a href="competition.html">Open Competition</a></li>
+                        <li class="menuItem" style="padding: 0 10px;"><a href="cfp.html">Call for Papers</a></li>
+                        <li class="menuItem" style="padding: 0 10px;"><a href="speakers.html">Invited Speakers</a></li>
+                        <li class="menuItem" style="padding: 0 10px;"><a href="program.html">Program</a></li>
+                        <li class="menuItem" style="padding: 0 10px;"><a href="organizers.html">Organizers</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="page-section">
+        <div class="wrap wow fadeInUp">
+            <div class="page-head-block" style="border-bottom:none; padding-bottom:0;">
+                <h2 class="page-head">MetaFine Open Competition</h2>
+                <p class="page-head-sub">Moving robot manipulation evaluation beyond binary task success.</p>
+            </div>
+            <h3 class="section-heading">Overview</h3>
+            <p>The MetaFine Open Competition is a central component of our workshop at CoRL 2026. It aims to move robot manipulation evaluation beyond binary task success by diagnosing the specific capabilities that determine fine-grained performance.</p>
+            <p>The competition is built on <a href="https://metafine.github.io/" target="_blank"><b>MetaFine</b></a>, a diagnostic meta-evaluation framework that evaluates robotic systems along three complementary dimensions: understanding, perception, and controlled behavior.</p>
+
+            <h3 class="section-heading">Challenge Tracks</h3>
+            <ul class="def-list">
+                <li><b>Understanding</b><br>Evaluate whether a system correctly interprets task instructions, object attributes, target parts, and compositional commands.</li>
+                <li><b>Perception</b><br>Measure fine-grained spatial perception and robustness under controlled changes in viewpoint, illumination, object appearance, and geometry.</li>
+                <li><b>Controlled Behavior</b><br>Assess execution precision, trajectory stability, constraint satisfaction, and error accumulation during manipulation.</li>
+            </ul>
+
+            <h3 class="section-heading">Evaluation</h3>
+            <p>Submissions will be evaluated using a unified diagnostic protocol. In addition to task success, the competition will report dimension-specific capability profiles and representative failure cases. Separate rankings will be provided for each track, together with an overall leaderboard.</p>
+            <p>To ensure fairness and reproducibility, participants will be required to submit executable code or standardized evaluation packages. Final rankings may be verified on hidden task configurations and perturbation sets.</p>
+
+            <h3 class="section-heading">Participation</h3>
+            <p>The competition is open to researchers, students, and practitioners from academia and industry. Public baselines, documentation, starter code, and evaluation tools will be released to support participation.</p>
+            <p>Teams may participate in all challenge tracks. Further details on registration, submission format, compute requirements, and evaluation rules will be announced on this page.</p>
+
+            <h3 class="section-heading">Finalists and Workshop Participation</h3>
+            <p>The top three teams will be selected before CoRL 2026 and invited to present their methods during the workshop. Finalists will also participate in interactive failure analysis and community discussions with invited speakers and workshop attendees.</p>
+            <p>Competition results will serve as shared evidence for discussing how fine-grained robotic capabilities should be measured, diagnosed, and improved.</p>
+
+            <h3 class="section-heading">Important Dates</h3>
+            <ul>
+                <li>Competition launch: TBD</li>
+                <li>Registration deadline: TBD</li>
+                <li>Submission deadline: TBD</li>
+                <li>Final evaluation: TBD</li>
+                <li>Finalist notification: TBD</li>
+                <li>Workshop at CoRL 2026: November 9, 2026</li>
+            </ul>
+
+            <h3 class="section-heading">Awards</h3>
+            <p>Awards will recognize the overall best-performing systems as well as outstanding performance in understanding, perception, and controlled behavior. Additional awards may be given for reproducibility, open-source contributions, and insightful failure analysis.</p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-title">RoboFineMani @ CoRL 2026</div>
+        <div class="footer-sub">Beyond Binary Success: Diagnosing Fine-Grained Capabilities in Robot Manipulation</div>
+        <div class="footer-meta">CoRL 2026 Workshop &middot; November 9, 2026 &middot; &copy; 2026</div>
+    </footer>
+
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/stickUp.min.js"></script>
+    <script type="text/javascript">
+        jQuery(function($) { $(document).ready(function() { $('.navbar-default').stickUp(); }); });
+    </script>
+    <script src="js/wow.min.js"></script>
+    <script>new WOW().init();</script>
+</body>
+</html>

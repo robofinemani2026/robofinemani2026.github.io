@@ -1,0 +1,242 @@
+/* ============================================================
+   RoboFineMani @ CoRL 2026 — site-specific overrides
+   (kept separate from vendored theme CSS)
+   ============================================================ */
+
+/* --- Home hero: guarantee full viewport regardless of html height chain --- */
+.intro-header { min-height: 100vh; }
+
+/* --- Readable content column --------------------------------- */
+.page-section {
+    background-color: #f8f8f8;
+    padding: 80px 0 90px;          /* generous breathing room top & bottom */
+}
+.page-section .wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 28px;
+}
+.page-section h3.section-heading {
+    color: #164FC9;
+    font-weight: 700;
+    margin-top: 58px;              /* clear gap above each sub-section */
+    margin-bottom: 26px;
+}
+/* first heading in a page shouldn't push down from the top */
+.page-section .wrap > h3.section-heading:first-child {
+    margin-top: 0;
+}
+.page-section h4.section-heading {
+    color: #164FC9;
+    margin-top: 30px;
+    margin-bottom: 16px;
+}
+.page-section p,
+.page-section li {
+    text-align: justify;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 300;          /* Lato Light — matches ltdl-ijcai21 .lead */
+    line-height: 1.8;
+    color: #34495E;
+}
+.page-section p { margin-bottom: 20px; }
+.page-section li { margin-bottom: 8px; }
+.page-section ul { margin-bottom: 24px; padding-left: 22px; }
+/* definition-style list: bold term + description on the next line */
+.page-section ul.def-list > li { margin-bottom: 18px; }
+.page-section ul.def-list > li > b { display: inline-block; margin-bottom: 4px; }
+.lead-intro {
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 300;          /* Lato Light — matches ltdl-ijcai21 .lead */
+    line-height: 1.8;
+    color: #34495E;
+    margin-bottom: 30px;
+}
+
+/* --- In-text links in body paragraphs: underlined, hover→title blue --- */
+.page-section .wrap > p a {
+    color: #34495E;
+    text-decoration: underline;
+    transition: color 0.15s ease;
+}
+.page-section .wrap > p a:hover,
+.page-section .wrap > p a:focus {
+    color: #164FC9;            /* title blue on hover */
+    text-decoration: underline;
+}
+
+/* --- Inner-page text title (no cover image) ------------------ */
+.page-head-block {
+    text-align: left;
+    margin-bottom: 46px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.page-head {
+    color: #164FC9;
+    font-weight: 700;
+    font-size: 2.1em;
+    margin: 0;
+}
+.page-head-sub {
+    color: #666;
+    font-size: 1.05em;
+    line-height: 1.6;
+    margin: 14px 0 0;
+    max-width: 760px;
+}
+/* tighten the first content element directly under the title */
+.page-head-block + h3.section-heading,
+.page-head-block + .lead-intro,
+.page-head-block + .people-grid { margin-top: 0; }
+
+/* --- Challenge / track cards --------------------------------- */
+.track-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
+    margin: 38px 0 16px;
+}
+.track-card {
+    flex: 1 1 240px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-top: 4px solid #164FC9;
+    border-radius: 8px;
+    padding: 28px 26px 24px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+.track-card h4 {
+    color: #164FC9;
+    margin: 0 0 14px;
+    font-weight: 700;
+}
+.track-card p { font-size: 16px; line-height: 1.7; margin: 0; text-align: left; }
+
+/* --- People (speakers / organizers) -------------------------- */
+.people-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 52px 64px;
+    margin: 52px 0 24px;
+}
+/* wider column so the 4 speakers sit on a single row */
+.wrap.people-wrap { max-width: 1280px; }
+/* wider still so all 5 organizers sit on a single row */
+.wrap.people-wrap-5 { max-width: 1280px; }
+.person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* photo + name + affiliation share one centered axis */
+    text-align: center;
+    min-width: 168px;      /* photo width; box hugs its widest child */
+}
+/* speakers: fixed equal-width columns → perfectly even spacing */
+.people-wrap .person { width: 270px; min-width: 270px; }
+.people-wrap .people-grid { gap: 48px 40px; }
+.person img {
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    background: #e9eef9;
+    border: 3px solid #fff;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+/* captions under avatars stay centered (override the justified body rule) */
+.person .name { font-weight: 700; margin: 0; color: #222; font-size: 17px; text-align: center; }
+/* names never turn blue, even when linked */
+.person .name a { color: inherit; text-decoration: none; }
+.person .name a:hover { text-decoration: underline; }
+.person .affil { margin: 6px 0 0; font-size: 15px; line-height: 1.5; color: #666; text-align: center; white-space: nowrap; }
+.person .photo-placeholder {
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+    margin: 0 auto 12px;
+    background: #e9eef9;
+    border: 2px dashed #b9c6e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8a9ac4;
+    font-size: 2.6em;
+    font-weight: 700;
+}
+
+/* --- Important dates ----------------------------------------- */
+.dates-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0 12px;
+}
+.dates-table td {
+    padding: 15px 16px;
+    border-bottom: 1px solid #e6e6e6;
+    font-size: 17px;
+}
+.dates-table td:first-child { color: #333; }
+.dates-table td:last-child {
+    text-align: right;
+    font-weight: 700;
+    color: #164FC9;
+    white-space: nowrap;
+}
+
+/* --- Program table ------------------------------------------- */
+.program-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+}
+.program-table th, .program-table td {
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    text-align: center;
+}
+.program-table th { background: #f2f2f2; }
+
+/* --- Sticky footer: footer sits at the bottom; short pages get
+       whitespace between content and the bar ------------------- */
+body {
+    height: auto;          /* override theme's fixed height:100% */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.page-section { flex: 1 0 auto; }   /* grows to fill leftover space */
+
+/* --- Footer -------------------------------------------------- */
+.site-footer {
+    flex-shrink: 0;
+    background: #1f2a44;
+    color: #cdd6ea;
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 0.95em;
+    line-height: 1.7;
+}
+.site-footer .footer-title { font-weight: 700; color: #fff; font-size: 1.25em; margin-bottom: 6px; }
+.site-footer .footer-sub { color: #aab6d4; max-width: 760px; margin: 0 auto 12px; }
+.site-footer .footer-meta { font-size: 0.9em; color: #8a97ba; }
+.site-footer a { color: #9fb6ef; }
+
+/* --- Nav: the selected item looks like the others — never blue --- */
+.navbar-default .navbar-nav > li.active > a,
+.navbar-default .navbar-nav > li.active > a:focus {
+    color: #34495e;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav > li.active > a:hover {
+    color: #1abc9c;            /* same hover as every other nav item */
+    background-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .content-section-a { padding: 5px 20px; }
+    .intro-header .page-title { font-size: 0.5em; }
+}
