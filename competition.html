@@ -56,6 +56,46 @@
             <p>The MetaFine Open Competition is a central component of our workshop at CoRL 2026. It aims to move robot manipulation evaluation beyond binary task success by diagnosing the specific capabilities that determine fine-grained performance.</p>
             <p>The competition is built on <a href="https://metafine.github.io/" target="_blank"><b>MetaFine</b></a>, a diagnostic meta-evaluation framework that evaluates robotic systems along three complementary dimensions: understanding, perception, and controlled behavior.</p>
 
+            <h3 class="section-heading">Registration</h3>
+            <p>To participate, register your team using the form below. Each person may join <b>only one team</b>, and each team may have <b>at most 6 members</b>. The contact person will receive all competition announcements.</p>
+            <form id="reg-form" class="reg-form" action="https://formspree.io/f/xgawbdqj" method="POST" novalidate>
+                <input type="hidden" name="_subject" value="[RoboFineMani] New team registration">
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                <div class="reg-row">
+                    <div class="reg-field">
+                        <label for="reg-team">Team name <span class="reg-req">*</span></label>
+                        <input type="text" id="reg-team" name="team_name" required maxlength="100">
+                    </div>
+                    <div class="reg-field">
+                        <label for="reg-inst">Institution / affiliation <span class="reg-req">*</span></label>
+                        <input type="text" id="reg-inst" name="institution" required maxlength="200">
+                    </div>
+                </div>
+                <div class="reg-row">
+                    <div class="reg-field">
+                        <label for="reg-contact">Contact person <span class="reg-req">*</span></label>
+                        <input type="text" id="reg-contact" name="contact_person" required maxlength="100">
+                    </div>
+                    <div class="reg-field">
+                        <label for="reg-email">Contact email <span class="reg-req">*</span></label>
+                        <input type="email" id="reg-email" name="email" required maxlength="200">
+                    </div>
+                </div>
+                <div class="reg-field">
+                    <label for="reg-members">Team members (one per line, including the contact person; max 6) <span class="reg-req">*</span></label>
+                    <textarea id="reg-members" name="team_members" rows="4" required placeholder="Alice Zhang — Example University&#10;Bob Li — Example Lab"></textarea>
+                </div>
+                <div class="reg-field reg-check">
+                    <label>
+                        <input type="checkbox" name="agree_rules" value="yes" required>
+                        I confirm that every listed member joins only this team, and our team has no more than 6 members. <span class="reg-req">*</span>
+                    </label>
+                </div>
+                <button type="submit" class="reg-submit" id="reg-submit">Register team</button>
+                <p class="reg-status" id="reg-status" role="status" aria-live="polite"></p>
+            </form>
+
             <h3 class="section-heading">Challenge Tracks</h3>
             <ul class="def-list">
                 <li><b>Understanding</b><br>Evaluate whether a system correctly interprets task instructions, object attributes, target parts, and compositional commands.</li>
@@ -105,5 +145,51 @@
     </script>
     <script src="js/wow.min.js"></script>
     <script>new WOW().init();</script>
+    <script>
+    (function () {
+        var form = document.getElementById('reg-form');
+        var status = document.getElementById('reg-status');
+        var btn = document.getElementById('reg-submit');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            status.className = 'reg-status';
+            if (!form.checkValidity()) {
+                status.classList.add('reg-error');
+                status.textContent = 'Please fill in all required fields (and tick the rules checkbox).';
+                return;
+            }
+            var members = document.getElementById('reg-members').value
+                .split('\n').filter(function (l) { return l.trim() !== ''; });
+            if (members.length > 6) {
+                status.classList.add('reg-error');
+                status.textContent = 'A team may have at most 6 members — you listed ' + members.length + '.';
+                return;
+            }
+            btn.disabled = true;
+            btn.textContent = 'Submitting…';
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).then(function (resp) {
+                if (resp.ok) {
+                    form.reset();
+                    status.classList.add('reg-ok');
+                    status.textContent = 'Registration received — thank you! The contact person will receive competition announcements by email.';
+                    btn.textContent = 'Registered';
+                } else {
+                    return resp.json().then(function (data) {
+                        throw new Error((data.errors || []).map(function (er) { return er.message; }).join(', ') || 'Submission failed.');
+                    });
+                }
+            }).catch(function (err) {
+                status.classList.add('reg-error');
+                status.textContent = 'Submission failed: ' + err.message + ' Please try again or email the organizers.';
+                btn.disabled = false;
+                btn.textContent = 'Register team';
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
