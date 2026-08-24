@@ -56,6 +56,69 @@
             <p>The MetaFine Open Competition is a central component of our workshop at CoRL 2026. It aims to move robot manipulation evaluation beyond binary task success by diagnosing the specific capabilities that determine fine-grained performance.</p>
             <p>The competition is built on <a href="https://metafine.github.io/" target="_blank"><b>MetaFine</b></a>, a diagnostic meta-evaluation framework that evaluates robotic systems along three complementary dimensions: understanding, perception, and controlled behavior.</p>
 
+            <div class="task-bar">
+                <div class="task-bar-head">
+                    <div class="task-bar-label">competition tasks &middot; scroll to browse</div>
+                    <div class="task-bar-nav">
+                        <button type="button" class="task-nav-btn" data-task-scroll="-1" aria-label="Scroll left">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18 L9 12 L15 6"></path></svg>
+                        </button>
+                        <button type="button" class="task-nav-btn" data-task-scroll="1" aria-label="Scroll right">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6 L15 12 L9 18"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="taskScroller" class="task-scroller">
+                    <div class="task-track">
+                        <figure class="task-card">
+                            <div class="task-video-box">
+                                <video src="video/tasks/t1_grasp_part.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                            </div>
+                            <figcaption>
+                                <div class="task-name">T1 &middot; Grasp Part</div>
+                                <div class="task-eg">e.g. grasp the <i>cap</i> / <i>body</i> of the bottle</div>
+                            </figcaption>
+                        </figure>
+                        <figure class="task-card">
+                            <div class="task-video-box">
+                                <video src="video/tasks/t2_grasp_move_mug.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                            </div>
+                            <figcaption>
+                                <div class="task-name">T2 &middot; Grasp Part &amp; Move</div>
+                                <div class="task-eg">e.g. grasp the <i>handle</i> of the mug and move it to a target</div>
+                            </figcaption>
+                        </figure>
+                        <figure class="task-card">
+                            <div class="task-video-box">
+                                <video src="video/tasks/t3_toggle_switch_table.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                            </div>
+                            <figcaption>
+                                <div class="task-name">T3 &middot; Toggle Part</div>
+                                <div class="task-eg">e.g. turn on the switch of a given <i>color</i></div>
+                            </figcaption>
+                        </figure>
+                        <figure class="task-card">
+                            <div class="task-video-box">
+                                <video src="video/tasks/t4_put_blocks_into_boxes.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                            </div>
+                            <figcaption>
+                                <div class="task-name">T4 &middot; Put Blocks into Boxes</div>
+                                <div class="task-eg">e.g. place each block into its matching box</div>
+                            </figcaption>
+                        </figure>
+                        <figure class="task-card">
+                            <div class="task-video-box">
+                                <video src="video/tasks/t5_insert_letter.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                            </div>
+                            <figcaption>
+                                <div class="task-name">T5 &middot; Letter Ensemble</div>
+                                <div class="task-eg">e.g. insert the letters <i>C&nbsp;o&nbsp;R&nbsp;L</i> into the board</div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
             <h3 class="section-heading">Registration</h3>
             <p>To participate, register your team using the form below. Each person may join <b>only one team</b>, and each team may have <b>at most 6 members</b>. The contact person will receive all competition announcements.</p>
             <form id="reg-form" class="reg-form" action="https://formspree.io/f/xgawbdqj" method="POST" novalidate>
@@ -145,6 +208,18 @@
     </script>
     <script src="js/wow.min.js"></script>
     <script>new WOW().init();</script>
+    <script>
+    (function () {
+        var scroller = document.getElementById('taskScroller');
+        document.querySelectorAll('[data-task-scroll]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var card = scroller.querySelector('.task-card');
+                var step = (card ? card.offsetWidth + 16 : 300) * parseInt(btn.getAttribute('data-task-scroll'), 10);
+                scroller.scrollBy({ left: step, behavior: 'smooth' });
+            });
+        });
+    })();
+    </script>
     <script>
     (function () {
         var form = document.getElementById('reg-form');
