@@ -384,22 +384,41 @@ body {
     color: #6b7a89;
 }
 
-/* --- Resource link buttons (GitHub / HF) --------------------- */
-.res-links { display: flex; gap: 14px; flex-wrap: wrap; margin: 22px 0 6px; }
-.res-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 9px 22px;
-    border-radius: 999px;
-    border: 1.5px solid #164FC9;
+/* --- Resource cards (Data / Platform) ------------------------ */
+.res-cards { display: flex; gap: 28px; flex-wrap: wrap; margin: 26px 0 6px; }
+.res-card {
+    flex: 1 1 300px;
+    max-width: 420px;
+    display: block;
+    padding: 16px 22px;
+    border-radius: 8px;
+    border: 1px solid #e3e6ea;
     background: #ffffff;
-    color: #164FC9 !important;
+    box-shadow: 0 1px 3px rgba(22, 79, 201, 0.06);
+    text-decoration: none !important;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.res-card:hover {
+    border-color: #164FC9;
+    box-shadow: 0 3px 10px rgba(22, 79, 201, 0.12);
+}
+.res-card-label {
+    display: block;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #8a97a5;
+    margin-bottom: 6px;
+}
+.res-card-value {
+    display: flex;
+    align-items: center;
     font-family: "Lato", Helvetica, Arial, sans-serif;
     font-weight: 700;
-    font-size: 15px;
-    text-decoration: none !important;
-    transition: background 0.15s ease, color 0.15s ease;
+    font-size: 16px;
+    color: #164FC9;
+    word-break: break-all;
 }
-.res-btn:hover { background: #164FC9; color: #ffffff !important; }
-.res-btn .fa { font-size: 18px; }
-.res-hf { font-size: 17px; line-height: 1; }
+.res-card-value .fa { font-size: 20px; }
+.res-hf { font-size: 18px; line-height: 1; }
