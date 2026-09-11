@@ -99,8 +99,8 @@
     <script>
     (function () {
         // ---- Leaderboard data: add one object per evaluated submission ----
-        // Per-task scores are in [0, 1]. Dimension/overall aggregates are computed below.
-        var LB_UPDATED = '2026-09-10';
+        // Per-task scores are in [0, 1], recorded to 3 decimals. Dimension/overall aggregates are computed below.
+        var LB_UPDATED = '2026-09-11';
         var LB_TASKS = ['T1', 'T2', 'T3', 'T4', 'T5'];
         var LEADERBOARD = [
             {
@@ -112,9 +112,16 @@
             {
                 // Evaluated 2026-09-10 (T1 only; tasks without a submission count as 0).
                 team: 'DeepSick',
-                perception:    { T1: 0.2583, T2: 0, T3: 0, T4: 0, T5: 0 },
-                understanding: { T1: 0.35,   T2: 0, T3: 0, T4: 0, T5: 0 },
-                behavior:      { T1: 0.35,   T2: 0, T3: 0, T4: 0, T5: 0 }
+                perception:    { T1: 0.258, T2: 0, T3: 0, T4: 0, T5: 0 },
+                understanding: { T1: 0.350, T2: 0, T3: 0, T4: 0, T5: 0 },
+                behavior:      { T1: 0.350, T2: 0, T3: 0, T4: 0, T5: 0 }
+            },
+            {
+                // Evaluated 2026-09-11 (T1-T5).
+                team: 'HITSZ Robotics',
+                perception:    { T1: 0.508, T2: 1.000, T3: 0.650, T4: 0.970, T5: 0.025 },
+                understanding: { T1: 0.550, T2: 1.000, T3: 0.650, T4: 0.967, T5: 0.013 },
+                behavior:      { T1: 0.550, T2: 1.000, T3: 0.650, T4: 0.967, T5: 0.013 }
             }
         ];
         // -------------------------------------------------------------------
