@@ -156,8 +156,8 @@
                 (r.e.baseline ? '<span class="lb-badge">baseline</span>' : '') +
                 (r.e.affiliation ? '<span class="lb-aff">' + esc(r.e.affiliation) + '</span>' : '') + '</td>';
         }
-        // Plain rank numbers for now; set MEDALS = true to show \ud83e\udd47\ud83e\udd48\ud83e\udd49 for the top three.
-        var MEDALS = false;
+        // Set MEDALS = false to fall back to plain rank numbers for the top three.
+        var MEDALS = true;
         function medal(i) { return MEDALS && i < 3 ? ['\ud83e\udd47', '\ud83e\udd48', '\ud83e\udd49'][i] : String(i + 1); }
 
         var DIM_COLS = [{ key: 'perception', label: 'Perception' }, { key: 'understanding', label: 'Understanding' }, { key: 'behavior', label: 'Behavior' }];
