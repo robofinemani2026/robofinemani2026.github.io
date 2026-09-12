@@ -100,7 +100,7 @@
     (function () {
         // ---- Leaderboard data: add one object per evaluated submission ----
         // Per-task scores are in [0, 1], recorded to 3 decimals. Dimension/overall aggregates are computed below.
-        var LB_UPDATED = '2026-09-11';
+        var LB_UPDATED = '2026-09-12';
         var LB_TASKS = ['T1', 'T2', 'T3', 'T4', 'T5'];
         var LEADERBOARD = [
             {
@@ -122,6 +122,13 @@
                 perception:    { T1: 0.508, T2: 1.000, T3: 0.650, T4: 0.970, T5: 0.025 },
                 understanding: { T1: 0.550, T2: 1.000, T3: 0.650, T4: 0.967, T5: 0.013 },
                 behavior:      { T1: 0.550, T2: 1.000, T3: 0.650, T4: 0.967, T5: 0.013 }
+            },
+            {
+                // Evaluated 2026-09-12 (T1-T5).
+                team: 'DBX',
+                perception:    { T1: 0.319, T2: 0.974, T3: 0.617, T4: 0.993, T5: 0.315 },
+                understanding: { T1: 0.350, T2: 0.950, T3: 0.550, T4: 1.000, T5: 0.275 },
+                behavior:      { T1: 0.350, T2: 0.950, T3: 0.550, T4: 1.000, T5: 0.275 }
             }
         ];
         // -------------------------------------------------------------------
