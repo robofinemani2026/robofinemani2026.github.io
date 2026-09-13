@@ -75,7 +75,7 @@
                         <tbody></tbody>
                     </table>
                 </div>
-                <div class="lb-foot">Rankings will appear here as team submissions are evaluated. Overall = mean over the five tasks; T1–T5 tabs show per-task scores. Ranks are always by the overall score. A task a team has not been evaluated on counts as 0.</div>
+                <div class="lb-foot">Rankings will appear here as team submissions are evaluated. Overall = mean over the five tasks; T1–T5 tabs show per-task scores and are ranked by that task’s score. A task a team has not been evaluated on counts as 0.</div>
             </div>
 
         </div>
@@ -151,7 +151,9 @@
             var perTask = {};
             LB_TASKS.forEach(function (t) { perTask[t] = mean(DIMS.map(function (d) { return e[d][t]; })); });
             return { e: e, dim: dim, perTask: perTask, overall: mean(DIMS.map(function (d) { return dim[d]; })) };
-        }).sort(function (a, b) { return b.overall - a.overall; });
+        }).sort(function (a, b) { return b.overall - a.overall; });  // base order; also the tie-break inside a task tab
+
+        function scoreOf(r, view) { return view === 'overall' ? r.overall : r.perTask[view]; }
 
         var table = document.getElementById('lbTable');
         var thead = table.querySelector('thead');
@@ -177,8 +179,9 @@
                 tbody.innerHTML = '<tr><td class="lb-empty" colspan="6">No evaluated submissions yet.</td></tr>';
                 return;
             }
-            tbody.innerHTML = rows.map(function (r, i) {
-                var rankShown = r.e.baseline ? '&ndash;' : medal(rows.filter(function (x, j) { return j < i && !x.e.baseline; }).length);
+            var viewRows = rows.slice().sort(function (a, b) { return scoreOf(b, view) - scoreOf(a, view); });
+            tbody.innerHTML = viewRows.map(function (r, i) {
+                var rankShown = r.e.baseline ? '&ndash;' : medal(viewRows.filter(function (x, j) { return j < i && !x.e.baseline; }).length);
                 return '<tr' + (r.e.baseline ? ' class="lb-baseline"' : '') + '><td class="lb-rank">' + rankShown + '</td>' + teamCell(r) +
                     DIM_COLS.map(function (c) { return '<td class="lb-num">' + fmt(isTask ? r.e[c.key][view] : r.dim[c.key]) + '</td>'; }).join('') +
                     '<td class="lb-num lb-overall">' + fmt(isTask ? r.perTask[view] : r.overall) + '</td></tr>';
