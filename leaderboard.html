@@ -99,8 +99,8 @@
     <script>
     (function () {
         // ---- Leaderboard data: add one object per evaluated submission ----
-        // Per-task scores are in [0, 1], recorded to 3 decimals. Dimension/overall aggregates are computed below.
-        var LB_UPDATED = '2026-09-13';
+        // Per-task scores are in [0, 1], preserving submitted precision. Display uses 3 decimals; aggregates are computed below.
+        var LB_UPDATED = '2026-09-15';
         var LB_TASKS = ['T1', 'T2', 'T3', 'T4', 'T5'];
         var LEADERBOARD = [
             {
@@ -110,11 +110,11 @@
                 behavior:      { T1: 0.35,  T2: 0.95,  T3: 0.60,  T4: 0.45,  T5: 0.05  }
             },
             {
-                // Evaluated 2026-09-10 (T1 only; tasks without a submission count as 0).
+                // Updated 2026-09-15 (latest submission, T1-T5).
                 team: 'DeepSick',
-                perception:    { T1: 0.258, T2: 0, T3: 0, T4: 0, T5: 0 },
-                understanding: { T1: 0.350, T2: 0, T3: 0, T4: 0, T5: 0 },
-                behavior:      { T1: 0.350, T2: 0, T3: 0, T4: 0, T5: 0 }
+                perception:    { T1: 0.2812, T2: 0.8694, T3: 0.4062, T4: 0.7338, T5: 0.0063 },
+                understanding: { T1: 0.3750, T2: 0.9167, T3: 0.4250, T4: 0.8000, T5: 0.0000 },
+                behavior:      { T1: 0.3750, T2: 0.9167, T3: 0.4250, T4: 0.8000, T5: 0.0000 }
             },
             {
                 // Evaluated 2026-09-11 (T1-T5).
