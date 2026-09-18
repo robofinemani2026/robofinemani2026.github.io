@@ -100,7 +100,7 @@
     (function () {
         // ---- Leaderboard data: add one object per evaluated submission ----
         // Per-task scores are in [0, 1], preserving submitted precision. Display uses 3 decimals; aggregates are computed below.
-        var LB_UPDATED = '2026-09-16';
+        var LB_UPDATED = '2026-09-18';
         var LB_TASKS = ['T1', 'T2', 'T3', 'T4', 'T5'];
         var LEADERBOARD = [
             {
@@ -136,6 +136,13 @@
                 perception:    { T1: 0.3771, T2: 0.9292, T3: 0.4062, T4: 0.8657, T5: 0.0760 },
                 understanding: { T1: 0.4250, T2: 0.9833, T3: 0.5500, T4: 0.8833, T5: 0.0875 },
                 behavior:      { T1: 0.4250, T2: 0.9833, T3: 0.5500, T4: 0.8833, T5: 0.0875 }
+            },
+            {
+                // Evaluated 2026-09-18 (T3 only; unevaluated tasks count as 0).
+                team: 'santra',
+                perception:    { T1: 0.0000, T2: 0.0000, T3: 0.4875, T4: 0.0000, T5: 0.0000 },
+                understanding: { T1: 0.0000, T2: 0.0000, T3: 0.4000, T4: 0.0000, T5: 0.0000 },
+                behavior:      { T1: 0.0000, T2: 0.0000, T3: 0.4000, T4: 0.0000, T5: 0.0000 }
             }
         ];
         // -------------------------------------------------------------------
