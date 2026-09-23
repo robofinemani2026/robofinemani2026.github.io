@@ -100,6 +100,7 @@
     (function () {
         // ---- Leaderboard data: add one object per evaluated submission ----
         // Per-task scores are in [0, 1], preserving submitted precision. Display uses 3 decimals; aggregates are computed below.
+        // Every new or updated submission must include submittedAt (ISO 8601, UTC); legacy entries without it display '-'.
         var LB_UPDATED = '2026-09-23';
         var LB_TASKS = ['T1', 'T2', 'T3', 'T4', 'T5'];
         var LEADERBOARD = [
@@ -131,11 +132,12 @@
                 behavior:      { T1: 0.4250, T2: 0.9500, T3: 0.7250, T4: 1.0000, T5: 0.2750 }
             },
             {
-                // Updated 2026-09-18 (latest submission, T1-T5).
+                // Updated 2026-09-23 (1fb427e1e4d5, latest submission, T1-T5).
                 team: 'MAI',
-                perception:    { T1: 0.5021, T2: 0.9306, T3: 0.4708, T4: 0.9838, T5: 0.2729 },
-                understanding: { T1: 0.6000, T2: 1.0000, T3: 0.5500, T4: 0.9667, T5: 0.3250 },
-                behavior:      { T1: 0.6000, T2: 1.0000, T3: 0.5500, T4: 0.9667, T5: 0.3250 }
+                submittedAt: '2026-09-20T03:51:00Z',
+                perception:    { T1: 0.5042, T2: 0.9639, T3: 0.5583, T4: 0.9745, T5: 0.3010 },
+                understanding: { T1: 0.5000, T2: 1.0000, T3: 0.5500, T4: 0.9667, T5: 0.4375 },
+                behavior:      { T1: 0.5000, T2: 1.0000, T3: 0.5500, T4: 0.9667, T5: 0.4375 }
             },
             {
                 // Updated 2026-09-23 (first T1-T5 submission; sra-vjti/santra-metafine, 2754857a2b92, submitted 2026-09-18 13:55 UTC).
@@ -179,6 +181,11 @@
                 (r.e.baseline ? '<span class="lb-badge">baseline</span>' : '') +
                 (r.e.affiliation ? '<span class="lb-aff">' + esc(r.e.affiliation) + '</span>' : '') + '</td>';
         }
+        function submissionCell(r) {
+            var submittedAt = r.e.submittedAt;
+            return '<td class="lb-submitted">' + (submittedAt ? '<time datetime="' + esc(submittedAt) + '">' +
+                esc(submittedAt.slice(0, 16).replace('T', ' ')) + '</time>' : '-') + '</td>';
+        }
         // Set MEDALS = false to fall back to plain rank numbers for the top three.
         var MEDALS = true;
         function medal(i) { return MEDALS && i < 3 ? ['\ud83e\udd47', '\ud83e\udd48', '\ud83e\udd49'][i] : String(i + 1); }
@@ -188,9 +195,10 @@
             var isTask = view !== 'overall';
             thead.innerHTML = '<tr><th class="lb-rank">#</th><th class="lb-team">Team</th>' +
                 DIM_COLS.map(function (c) { return '<th class="lb-num">' + c.label + '</th>'; }).join('') +
-                '<th class="lb-num lb-overall">' + (isTask ? view + ' Overall' : 'Overall') + '</th></tr>';
+                '<th class="lb-num lb-overall">' + (isTask ? view + ' Overall' : 'Overall') + '</th>' +
+                (isTask ? '' : '<th class="lb-submitted">Sub. time (UTC)</th>') + '</tr>';
             if (!rows.length) {
-                tbody.innerHTML = '<tr><td class="lb-empty" colspan="6">No evaluated submissions yet.</td></tr>';
+                tbody.innerHTML = '<tr><td class="lb-empty" colspan="' + (isTask ? 6 : 7) + '">No evaluated submissions yet.</td></tr>';
                 return;
             }
             var viewRows = rows.slice().sort(function (a, b) { return scoreOf(b, view) - scoreOf(a, view); });
@@ -198,7 +206,8 @@
                 var rankShown = r.e.baseline ? '&ndash;' : medal(viewRows.filter(function (x, j) { return j < i && !x.e.baseline; }).length);
                 return '<tr' + (r.e.baseline ? ' class="lb-baseline"' : '') + '><td class="lb-rank">' + rankShown + '</td>' + teamCell(r) +
                     DIM_COLS.map(function (c) { return '<td class="lb-num">' + fmt(isTask ? r.e[c.key][view] : r.dim[c.key]) + '</td>'; }).join('') +
-                    '<td class="lb-num lb-overall">' + fmt(isTask ? r.perTask[view] : r.overall) + '</td></tr>';
+                    '<td class="lb-num lb-overall">' + fmt(isTask ? r.perTask[view] : r.overall) + '</td>' +
+                    (isTask ? '' : submissionCell(r)) + '</tr>';
             }).join('');
         }
         document.querySelectorAll('[data-lb-view]').forEach(function (btn) {
