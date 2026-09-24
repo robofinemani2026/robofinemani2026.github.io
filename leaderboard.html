@@ -101,7 +101,7 @@
         // ---- Leaderboard data: add one object per evaluated submission ----
         // Per-task scores are in [0, 1], preserving submitted precision. Display uses 3 decimals; aggregates are computed below.
         // Every new or updated submission must include submittedAt (ISO 8601, UTC); legacy entries without it display '-'.
-        var LB_UPDATED = '2026-09-23';
+        var LB_UPDATED = '2026-09-24';
         var LB_TASKS = ['T1', 'T2', 'T3', 'T4', 'T5'];
         var LEADERBOARD = [
             {
@@ -152,6 +152,14 @@
                 perception:    { T1: 0.3375, T2: 0.9000, T3: 0.3854, T4: 0.9468, T5: 0.0208 },
                 understanding: { T1: 0.3250, T2: 0.9333, T3: 0.3750, T4: 0.9833, T5: 0.0125 },
                 behavior:      { T1: 0.3250, T2: 0.9333, T3: 0.3750, T4: 0.9833, T5: 0.0125 }
+            },
+            {
+                // Updated 2026-09-24 (robofinemani-srd-lab, e60c7f3f1efc, T1-T5).
+                team: 'SRD',
+                submittedAt: '2026-09-20T06:20:00Z',
+                perception:    { T1: 0.2646, T2: 0.8250, T3: 0.4250, T4: 0.1181, T5: 0.0021 },
+                understanding: { T1: 0.2500, T2: 0.8833, T3: 0.5000, T4: 0.2000, T5: 0.0000 },
+                behavior:      { T1: 0.2500, T2: 0.8833, T3: 0.5000, T4: 0.2000, T5: 0.0000 }
             }
         ];
         // -------------------------------------------------------------------
