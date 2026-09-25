@@ -101,7 +101,7 @@
         // ---- Leaderboard data: add one object per evaluated submission ----
         // Per-task scores are in [0, 1], preserving submitted precision. Display uses 3 decimals; aggregates are computed below.
         // Every new or updated submission must include submittedAt (ISO 8601, UTC); legacy entries without it display '-'.
-        var LB_UPDATED = '2026-09-24';
+        var LB_UPDATED = '2026-09-25';
         var LB_TASKS = ['T1', 'T2', 'T3', 'T4', 'T5'];
         var LEADERBOARD = [
             {
@@ -140,11 +140,20 @@
                 behavior:      { T1: 0.5000, T2: 1.0000, T3: 0.5500, T4: 0.9667, T5: 0.4375 }
             },
             {
-                // Updated 2026-09-23 (first T1-T5 submission; sra-vjti/santra-metafine, 2754857a2b92, submitted 2026-09-18 13:55 UTC).
+                // Updated 2026-09-25 (sra-vjti/santra-metafine, 7bdfb6f6fd84, T1-T5).
                 team: 'santra',
-                perception:    { T1: 0.3125, T2: 0.8819, T3: 0.4979, T4: 0.5648, T5: 0.0021 },
-                understanding: { T1: 0.3000, T2: 0.9167, T3: 0.4250, T4: 0.6333, T5: 0.0125 },
-                behavior:      { T1: 0.3000, T2: 0.9167, T3: 0.4250, T4: 0.6333, T5: 0.0125 }
+                submittedAt: '2026-09-21T01:26:00Z',
+                perception:    { T1: 0.2771, T2: 0.8833, T3: 0.4938, T4: 0.7130, T5: 0.3073 },
+                understanding: { T1: 0.4250, T2: 0.9500, T3: 0.4000, T4: 0.7667, T5: 0.5375 },
+                behavior:      { T1: 0.4250, T2: 0.9500, T3: 0.4000, T4: 0.7667, T5: 0.5375 }
+            },
+            {
+                // Updated 2026-09-25 (a4fceefecd5e, T1-T5).
+                team: 'PRLR',
+                submittedAt: '2026-09-22T14:52:00Z',
+                perception:    { T1: 0.2958, T2: 0.7181, T3: 0.5479, T4: 0.2708, T5: 0.0000 },
+                understanding: { T1: 0.4500, T2: 0.7333, T3: 0.5250, T4: 0.2667, T5: 0.0000 },
+                behavior:      { T1: 0.4500, T2: 0.7333, T3: 0.5250, T4: 0.2667, T5: 0.0000 }
             },
             {
                 // Evaluated 2026-09-19 (T1-T5).
