@@ -101,7 +101,7 @@
         // ---- Leaderboard data: add one object per evaluated submission ----
         // Per-task scores are in [0, 1], preserving submitted precision. Display uses 3 decimals; aggregates are computed below.
         // Every new or updated submission must include submittedAt (ISO 8601, UTC); legacy entries without it display '-'.
-        var LB_UPDATED = '2026-09-27';
+        var LB_UPDATED = '2026-09-28';
         var LB_TASKS = ['T1', 'T2', 'T3', 'T4', 'T5'];
         var LEADERBOARD = [
             {
@@ -178,6 +178,14 @@
                 perception:    { T1: 0.2646, T2: 0.8250, T3: 0.4250, T4: 0.1181, T5: 0.0021 },
                 understanding: { T1: 0.2500, T2: 0.8833, T3: 0.5000, T4: 0.2000, T5: 0.0000 },
                 behavior:      { T1: 0.2500, T2: 0.8833, T3: 0.5000, T4: 0.2000, T5: 0.0000 }
+            },
+            {
+                // Updated 2026-09-28 (latest submission, T1-T5).
+                team: 'ZJNU',
+                submittedAt: '2026-09-27T05:51:00Z',
+                perception:    { T1: 0.1729, T2: 0.6931, T3: 0.2354, T4: 0.0532, T5: 0.0000 },
+                understanding: { T1: 0.2500, T2: 0.7667, T3: 0.4250, T4: 0.0333, T5: 0.0000 },
+                behavior:      { T1: 0.2500, T2: 0.7667, T3: 0.4250, T4: 0.0333, T5: 0.0000 }
             }
         ];
         // -------------------------------------------------------------------
