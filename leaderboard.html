@@ -101,7 +101,7 @@
         // ---- Leaderboard data: add one object per evaluated submission ----
         // Per-task scores are in [0, 1], preserving submitted precision. Display uses 3 decimals; aggregates are computed below.
         // Every new or updated submission must include submittedAt (ISO 8601, UTC); legacy entries without it display '-'.
-        var LB_UPDATED = '2026-10-01';
+        var LB_UPDATED = '2026-10-02';
         var LB_TASKS = ['T1', 'T2', 'T3', 'T4', 'T5'];
         var LEADERBOARD = [
             {
@@ -135,12 +135,14 @@
                 behavior:      { T1: 0.4500, T2: 0.9500, T3: 0.7250, T4: 1.0000, T5: 0.2750 }
             },
             {
-                // Updated 2026-09-27 (latest submission, T1-T5).
+                // Updated 2026-10-02 (1f00d9da3548): T1 and T5 scores; T2-T4 retained from the 2026-09-27 update.
+                // Behavior follows Understanding, consistent with the reported overall score of 0.8062.
+                // Previous submission time retained pending confirmation of the screenshot timestamp's meaning and timezone.
                 team: 'MAI',
                 submittedAt: '2026-09-24T11:58:00Z',
-                perception:    { T1: 0.5021, T2: 0.9639, T3: 0.8479, T4: 0.9745, T5: 0.3010 },
-                understanding: { T1: 0.6000, T2: 1.0000, T3: 0.8250, T4: 0.9667, T5: 0.4375 },
-                behavior:      { T1: 0.6000, T2: 1.0000, T3: 0.8250, T4: 0.9667, T5: 0.4375 }
+                perception:    { T1: 0.5125, T2: 0.9639, T3: 0.8479, T4: 0.9745, T5: 0.6354 },
+                understanding: { T1: 0.5500, T2: 1.0000, T3: 0.8250, T4: 0.9667, T5: 0.7375 },
+                behavior:      { T1: 0.5500, T2: 1.0000, T3: 0.8250, T4: 0.9667, T5: 0.7375 }
             },
             {
                 // Updated 2026-09-27 (ustc9, T1-T5).
