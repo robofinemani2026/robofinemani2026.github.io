@@ -101,7 +101,7 @@
         // ---- Leaderboard data: add one object per evaluated submission ----
         // Per-task scores are in [0, 1], preserving submitted precision. Display uses 3 decimals; aggregates are computed below.
         // Every new or updated submission must include submittedAt (ISO 8601, UTC); legacy entries without it display '-'.
-        var LB_UPDATED = '2026-10-03';
+        var LB_UPDATED = '2026-10-05';
         var LB_TASKS = ['T1', 'T2', 'T3', 'T4', 'T5'];
         var LEADERBOARD = [
             {
@@ -198,6 +198,14 @@
                 perception:    { T1: 0.1729, T2: 0.6931, T3: 0.2354, T4: 0.0532, T5: 0.0000 },
                 understanding: { T1: 0.2500, T2: 0.7667, T3: 0.4250, T4: 0.0333, T5: 0.0000 },
                 behavior:      { T1: 0.2500, T2: 0.7667, T3: 0.4250, T4: 0.0333, T5: 0.0000 }
+            },
+            {
+                // Added 2026-10-05 (6017e0019bd7, T1-T5); reported Overall: 0.4993.
+                team: 'FineForge',
+                submittedAt: '2026-10-01T18:27:00Z',
+                perception:    { T1: 0.2646, T2: 0.8917, T3: 0.4167, T4: 0.8565, T5: 0.0021 },
+                understanding: { T1: 0.3000, T2: 0.8500, T3: 0.6000, T4: 0.7667, T5: 0.0125 },
+                behavior:      { T1: 0.3000, T2: 0.8500, T3: 0.6000, T4: 0.7667, T5: 0.0125 }
             }
         ];
         // -------------------------------------------------------------------
