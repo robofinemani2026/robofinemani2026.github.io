@@ -101,7 +101,7 @@
         // ---- Leaderboard data: add one object per evaluated submission ----
         // Per-task scores are in [0, 1], preserving submitted precision. Display uses 3 decimals; aggregates are computed below.
         // Every new or updated submission must include submittedAt (ISO 8601, UTC); legacy entries without it display '-'.
-        var LB_UPDATED = '2026-10-07';
+        var LB_UPDATED = '2026-10-09';
         var LB_TASKS = ['T1', 'T2', 'T3', 'T4', 'T5'];
         var LEADERBOARD = [
             {
@@ -118,11 +118,11 @@
                 behavior:      { T1: 0.3750, T2: 0.9167, T3: 0.4250, T4: 0.8000, T5: 0.0000 }
             },
             {
-                // Updated 2026-10-03: T1 and T5 scores for the 2026-09-29 09:09 UTC submission; T2-T4 retained.
-                // Behavior follows Understanding, consistent with previous HITSZ submissions.
+                // Updated 2026-10-09: T5 Perception from 20870c22a633 (2026-10-05 15:11 UTC).
+                // T1: d2097aa49098 (09-29 09:09 UTC); T2/T4: 25cb20a04623 (09-22 08:20 UTC); T3: 3070fdbbcdbc (09-23 07:03 UTC).
                 team: 'HITSZ Robotics',
-                submittedAt: '2026-09-29T09:09:00Z',
-                perception:    { T1: 0.4958, T2: 1.0000, T3: 0.8229, T4: 0.9954, T5: 0.2823 },
+                submittedAt: '2026-10-05T15:11:00Z',
+                perception:    { T1: 0.4958, T2: 1.0000, T3: 0.8229, T4: 0.9954, T5: 0.2937 },
                 understanding: { T1: 0.5500, T2: 1.0000, T3: 0.8500, T4: 0.9833, T5: 0.4375 },
                 behavior:      { T1: 0.5500, T2: 1.0000, T3: 0.8500, T4: 0.9833, T5: 0.4375 }
             },
