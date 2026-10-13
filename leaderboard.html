@@ -101,7 +101,7 @@
         // ---- Leaderboard data: add one object per evaluated submission ----
         // Per-task scores are in [0, 1], preserving submitted precision. Display uses 3 decimals; aggregates are computed below.
         // Every new or updated submission must include submittedAt (ISO 8601, UTC); legacy entries without it display '-'.
-        var LB_UPDATED = '2026-10-12';
+        var LB_UPDATED = '2026-10-13';
         var LB_TASKS = ['T1', 'T2', 'T3', 'T4', 'T5'];
         var LEADERBOARD = [
             {
@@ -118,13 +118,13 @@
                 behavior:      { T1: 0.3750, T2: 0.9167, T3: 0.4250, T4: 0.8000, T5: 0.0000 }
             },
             {
-                // Updated 2026-10-12: T5 from 65c92f81cb86 (2026-10-09 13:27 UTC). Overall: 0.7686.
-                // T1: d2097aa49098 (09-29 09:09 UTC); T2/T4: 25cb20a04623 (09-22 08:20 UTC); T3: 3070fdbbcdbc (09-23 07:03 UTC).
+                // Updated 2026-10-13: T3 from 72d6b77adb51 (2026-10-12 08:14:26 UTC). Overall: 0.7842.
+                // T1: d2097aa49098 (09-29 09:09 UTC); T2/T4: 25cb20a04623 (09-22 08:20 UTC); T5: 65c92f81cb86 (10-09 13:27 UTC).
                 team: 'HITSZ Robotics',
-                submittedAt: '2026-10-09T13:27:00Z',
-                perception:    { T1: 0.4958, T2: 1.0000, T3: 0.8229, T4: 0.9954, T5: 0.4990 },
-                understanding: { T1: 0.5500, T2: 1.0000, T3: 0.8500, T4: 0.9833, T5: 0.4750 },
-                behavior:      { T1: 0.5500, T2: 1.0000, T3: 0.8500, T4: 0.9833, T5: 0.4750 }
+                submittedAt: '2026-10-12T08:14:26Z',
+                perception:    { T1: 0.4958, T2: 1.0000, T3: 0.9062, T4: 0.9954, T5: 0.4990 },
+                understanding: { T1: 0.5500, T2: 1.0000, T3: 0.9250, T4: 0.9833, T5: 0.4750 },
+                behavior:      { T1: 0.5500, T2: 1.0000, T3: 0.9250, T4: 0.9833, T5: 0.4750 }
             },
             {
                 // Updated 2026-10-01: T1 scores corrected and submission time added; T2-T5 scores retained from the 2026-09-21 update.
@@ -135,13 +135,21 @@
                 behavior:      { T1: 0.4500, T2: 0.9500, T3: 0.7250, T4: 1.0000, T5: 0.2750 }
             },
             {
-                // Updated 2026-10-12: T3 scores from the organizer-provided result. Overall: 0.8391.
-                // T1: 87c8da00b0ad; T2/T4/T5 retained from the 2026-10-07 update.
+                // Updated 2026-10-13: T5 from 98d1f30222ab (2026-10-12 02:11:39 UTC). Overall: 0.8374.
+                // T1: 87c8da00b0ad; T3 retained from the 2026-10-12 update; T2/T4 retained from the 2026-10-07 update.
                 team: 'MAI',
-                submittedAt: '2026-10-11T19:25:00Z',
+                submittedAt: '2026-10-12T02:11:39Z',
                 perception:    { T1: 0.6229, T2: 0.9889, T3: 0.8896, T4: 0.9907, T5: 0.6354 },
-                understanding: { T1: 0.6500, T2: 1.0000, T3: 0.8750, T4: 0.9667, T5: 0.7375 },
-                behavior:      { T1: 0.6500, T2: 1.0000, T3: 0.8750, T4: 0.9667, T5: 0.7375 }
+                understanding: { T1: 0.6500, T2: 1.0000, T3: 0.8750, T4: 0.9667, T5: 0.7250 },
+                behavior:      { T1: 0.6500, T2: 1.0000, T3: 0.8750, T4: 0.9667, T5: 0.7250 }
+            },
+            {
+                // Added 2026-10-13: first complete T1-T5 evaluation (FridayMetaFine/Friday_MetaFine), all from a14a74305cb5. Overall: 0.8287.
+                team: 'Friday',
+                submittedAt: '2026-10-12T03:20:21Z',
+                perception:    { T1: 0.8292, T2: 0.9556, T3: 0.9083, T4: 0.9954, T5: 0.4260 },
+                understanding: { T1: 0.8500, T2: 0.9500, T3: 0.9250, T4: 0.9833, T5: 0.4500 },
+                behavior:      { T1: 0.8500, T2: 0.9500, T3: 0.9250, T4: 0.9833, T5: 0.4500 }
             },
             {
                 // Updated 2026-09-27 (ustc9, T1-T5).
@@ -184,12 +192,12 @@
                 behavior:      { T1: 0.2500, T2: 0.8833, T3: 0.5000, T4: 0.2000, T5: 0.0000 }
             },
             {
-                // Updated 2026-10-02 (656378591c3b): Perception scores for T1-T5. Submission time withheld as requested.
-                // Understanding and Behavior retained as confirmed by the organizer; Overall recalculates to 0.5922.
+                // Updated 2026-10-13 (manik2026/manik, 3b32fbd8d28a, T1-T5). Overall: 0.7762.
                 team: 'manik',
-                perception:    { T1: 0.4375, T2: 0.9764, T3: 0.3979, T4: 0.9236, T5: 0.1719 },
-                understanding: { T1: 0.4750, T2: 0.9833, T3: 0.4250, T4: 0.9167, T5: 0.1875 },
-                behavior:      { T1: 0.4750, T2: 0.9833, T3: 0.4250, T4: 0.9167, T5: 0.1875 }
+                submittedAt: '2026-10-12T01:17:21Z',
+                perception:    { T1: 0.6292, T2: 0.9750, T3: 0.8187, T4: 0.9514, T5: 0.4354 },
+                understanding: { T1: 0.7000, T2: 0.9667, T3: 0.8500, T4: 0.9500, T5: 0.4500 },
+                behavior:      { T1: 0.7000, T2: 0.9667, T3: 0.8500, T4: 0.9500, T5: 0.4500 }
             },
             {
                 // Updated 2026-10-09 (5fd874cb3889, T1-T5).
@@ -208,12 +216,13 @@
                 behavior:      { T1: 0.3000, T2: 0.8500, T3: 0.6000, T4: 0.7667, T5: 0.4375 }
             },
             {
-                // Added 2026-10-11: first complete T1-T5 evaluation, all from c50d0c6becb1. Overall: 0.3972.
+                // Updated 2026-10-13: T1-T4 from a55e90efd838 (2026-10-11 15:21:28 UTC). Overall: 0.5955.
+                // T5 retained from c50d0c6becb1 (2026-10-05 08:14:41 UTC).
                 team: 'optimus',
-                submittedAt: '2026-10-05T08:14:41Z',
-                perception:    { T1: 0.3708, T2: 0.6736, T3: 0.5167, T4: 0.1319, T5: 0.0156 },
-                understanding: { T1: 0.4250, T2: 0.8833, T3: 0.5500, T4: 0.2167, T5: 0.0500 },
-                behavior:      { T1: 0.4250, T2: 0.8833, T3: 0.5500, T4: 0.2167, T5: 0.0500 }
+                submittedAt: '2026-10-11T15:21:28Z',
+                perception:    { T1: 0.4417, T2: 0.9514, T3: 0.5833, T4: 0.8241, T5: 0.0156 },
+                understanding: { T1: 0.5000, T2: 0.9833, T3: 0.6250, T4: 0.9000, T5: 0.0500 },
+                behavior:      { T1: 0.5000, T2: 0.9833, T3: 0.6250, T4: 0.9000, T5: 0.0500 }
             }
         ];
         // -------------------------------------------------------------------
