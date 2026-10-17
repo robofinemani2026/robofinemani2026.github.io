@@ -101,7 +101,7 @@
         // ---- Leaderboard data: add one object per evaluated submission ----
         // Per-task scores are in [0, 1], preserving submitted precision. Display uses 3 decimals; aggregates are computed below.
         // Every new or updated submission must include submittedAt (ISO 8601, UTC); legacy entries without it display '-'.
-        var LB_UPDATED = '2026-10-16';
+        var LB_UPDATED = '2026-10-17';
         var LB_TASKS = ['T1', 'T2', 'T3', 'T4', 'T5'];
         var LEADERBOARD = [
             {
@@ -218,13 +218,13 @@
                 behavior:      { T1: 0.3000, T2: 0.8500, T3: 0.6000, T4: 0.7667, T5: 0.4375 }
             },
             {
-                // Updated 2026-10-13: T1-T4 from a55e90efd838 (2026-10-11 15:21:28 UTC). Overall: 0.5955.
-                // T5 retained from c50d0c6becb1 (2026-10-05 08:14:41 UTC).
+                // Updated 2026-10-17: T1/T3/T4/T5 from 2e9b1b28ba4f (2026-10-16 12:58:34 UTC). Overall: 0.5899.
+                // T2 retained from a55e90efd838 (2026-10-11 15:21:28 UTC; weights unchanged).
                 team: 'optimus',
-                submittedAt: '2026-10-11T15:21:28Z',
-                perception:    { T1: 0.4417, T2: 0.9514, T3: 0.5833, T4: 0.8241, T5: 0.0156 },
-                understanding: { T1: 0.5000, T2: 0.9833, T3: 0.6250, T4: 0.9000, T5: 0.0500 },
-                behavior:      { T1: 0.5000, T2: 0.9833, T3: 0.6250, T4: 0.9000, T5: 0.0500 }
+                submittedAt: '2026-10-16T12:58:34Z',
+                perception:    { T1: 0.5208, T2: 0.9514, T3: 0.3937, T4: 0.9375, T5: 0.0625 },
+                understanding: { T1: 0.5500, T2: 0.9833, T3: 0.5000, T4: 0.9333, T5: 0.0250 },
+                behavior:      { T1: 0.5500, T2: 0.9833, T3: 0.5000, T4: 0.9333, T5: 0.0250 }
             },
             {
                 // Updated 2026-10-16: T5-only submission (Julian-MetaFine/MetaFine-T5-RLT), a112d0b2a210. Overall: 0.1136.
