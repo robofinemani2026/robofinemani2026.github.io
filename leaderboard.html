@@ -101,7 +101,7 @@
         // ---- Leaderboard data: add one object per evaluated submission ----
         // Per-task scores are in [0, 1], preserving submitted precision. Display uses 3 decimals; aggregates are computed below.
         // Every new or updated submission must include submittedAt (ISO 8601, UTC); legacy entries without it display '-'.
-        var LB_UPDATED = '2026-10-20';
+        var LB_UPDATED = '2026-10-21';
         var LB_TASKS = ['T1', 'T2', 'T3', 'T4', 'T5'];
         var LEADERBOARD = [
             {
@@ -118,14 +118,14 @@
                 behavior:      { T1: 0.3750, T2: 0.9167, T3: 0.4250, T4: 0.8000, T5: 0.0000 }
             },
             {
-                // Updated 2026-10-20: complete organizer-provided result. Overall: 0.8654.
-                // T1: 60b2c55275fc (2026-10-18 13:24:29 UTC); T2/T4: 25cb20a04623 (2026-09-22 08:20:43 UTC).
-                // T3: 72d6b77adb51 (2026-10-12 08:14:26 UTC); T5: ac59b067b131 (2026-10-18 07:35:21 UTC).
+                // Updated 2026-10-21: T1/T3/T5 from cf5b770c0608 (2026-10-19 22:55 UTC). Overall: 0.8779.
+                // T2/T4: 25cb20a04623 (2026-09-22 08:20:43 UTC).
+                // Complete organizer-provided result; latest submission time supplied to minute precision.
                 team: 'HITSZ Robotics',
-                submittedAt: '2026-10-18T13:24:29Z',
-                perception:    { T1: 0.7562, T2: 1.0000, T3: 0.9062, T4: 0.9954, T5: 0.5823 },
-                understanding: { T1: 0.8250, T2: 1.0000, T3: 0.9250, T4: 0.9833, T5: 0.6375 },
-                behavior:      { T1: 0.8250, T2: 1.0000, T3: 0.9250, T4: 0.9833, T5: 0.6375 }
+                submittedAt: '2026-10-19T22:55:00Z',
+                perception:    { T1: 0.7875, T2: 1.0000, T3: 0.9250, T4: 0.9954, T5: 0.5938 },
+                understanding: { T1: 0.8000, T2: 1.0000, T3: 0.9250, T4: 0.9833, T5: 0.7250 },
+                behavior:      { T1: 0.8000, T2: 1.0000, T3: 0.9250, T4: 0.9833, T5: 0.7250 }
             },
             {
                 // Updated 2026-10-01: T1 scores corrected and submission time added; T2-T5 scores retained from the 2026-09-21 update.
@@ -136,23 +136,24 @@
                 behavior:      { T1: 0.4500, T2: 0.9500, T3: 0.7250, T4: 1.0000, T5: 0.2750 }
             },
             {
-                // Updated 2026-10-20 (SEU-MAI): T4 from 336c50efe3ff (2026-10-18 12:18:00 UTC). Overall: 0.9457.
+                // Updated 2026-10-21 (SEU-MAI): T3/T5 from 3c8c0ac9e66f (2026-10-20 12:14 UTC). Overall: 0.9533.
                 // T1: 5b82caf79a4d (2026-10-16 09:00:34 UTC); T2: 4e572aadccd9 (2026-10-04 03:20:21 UTC).
-                // T3: 8cde7aeb9fa9 (2026-10-14 01:48:18 UTC); T5: ed3f09b48bf3 (2026-10-14 13:07:35 UTC).
+                // T4: 336c50efe3ff (2026-10-18 12:18:00 UTC); latest submission time supplied to minute precision.
                 team: 'MAI',
-                submittedAt: '2026-10-18T12:18:00Z',
-                perception:    { T1: 0.8625, T2: 0.9889, T3: 0.9875, T4: 1.0000, T5: 0.8885 },
-                understanding: { T1: 0.9000, T2: 1.0000, T3: 0.9750, T4: 0.9667, T5: 0.8875 },
-                behavior:      { T1: 0.9000, T2: 1.0000, T3: 0.9750, T4: 0.9667, T5: 0.8875 }
+                submittedAt: '2026-10-20T12:14:00Z',
+                perception:    { T1: 0.8625, T2: 0.9889, T3: 0.9854, T4: 1.0000, T5: 0.9042 },
+                understanding: { T1: 0.9000, T2: 1.0000, T3: 1.0000, T4: 0.9667, T5: 0.9125 },
+                behavior:      { T1: 0.9000, T2: 1.0000, T3: 1.0000, T4: 0.9667, T5: 0.9125 }
             },
             {
-                // Updated 2026-10-20: T1 from 1a2c2a6549d0 (2026-10-18 16:23:14 UTC); T5 from b035e9120b1b (2026-10-19 00:08:57 UTC). Overall: 0.9413.
+                // Updated 2026-10-21: T1/T5 from 654b4b0dce1d (2026-10-20 03:12 UTC). Overall: 0.9471.
                 // T2: aac8fce7fa28 (2026-10-13 08:17:46 UTC); T3: f58e7d1ca4e5 (2026-10-17 06:55:24 UTC); T4: a14a74305cb5 (2026-10-12 03:20:21 UTC).
+                // Complete organizer-provided result; latest submission time supplied to minute precision.
                 team: 'Friday',
-                submittedAt: '2026-10-19T00:08:57Z',
-                perception:    { T1: 0.9000, T2: 0.9833, T3: 1.0000, T4: 0.9954, T5: 0.8823 },
-                understanding: { T1: 0.8500, T2: 0.9833, T3: 1.0000, T4: 0.9833, T5: 0.8625 },
-                behavior:      { T1: 0.8500, T2: 0.9833, T3: 1.0000, T4: 0.9833, T5: 0.8625 }
+                submittedAt: '2026-10-20T03:12:00Z',
+                perception:    { T1: 0.8646, T2: 0.9833, T3: 1.0000, T4: 0.9954, T5: 0.8802 },
+                understanding: { T1: 0.9000, T2: 0.9833, T3: 1.0000, T4: 0.9833, T5: 0.8750 },
+                behavior:      { T1: 0.9000, T2: 0.9833, T3: 1.0000, T4: 0.9833, T5: 0.8750 }
             },
             {
                 // Updated 2026-09-27 (ustc9, T1-T5).
