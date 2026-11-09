@@ -186,6 +186,7 @@
 }
 
 /* --- Program table ------------------------------------------- */
+.page-section .wrap.program-wrap { max-width: 1080px; }
 .program-table {
     width: 100%;
     border-collapse: collapse;
@@ -197,6 +198,12 @@
     text-align: center;
 }
 .program-table th { background: #f2f2f2; }
+.program-table th:first-child,
+.program-table td:first-child {
+    width: 190px;
+    min-width: 190px;
+    white-space: nowrap;
+}
 
 /* --- Sticky footer: footer sits at the bottom; short pages get
        whitespace between content and the bar ------------------- */
