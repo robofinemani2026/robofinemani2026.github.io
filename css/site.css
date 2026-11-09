@@ -198,6 +198,11 @@
     text-align: center;
 }
 .program-table th { background: #f2f2f2; }
+.program-table th:last-child,
+.program-table td:last-child {
+    width: 200px;
+    min-width: 180px;
+}
 .program-table th:first-child,
 .program-table td:first-child {
     width: 190px;
